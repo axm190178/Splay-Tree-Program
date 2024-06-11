@@ -5,7 +5,6 @@ public class SplayTree {
     
     public static void main(String[] args) {
         
-    //Create variables
      Scanner input = new Scanner(System.in);
      int choice = 0;
      int num;
@@ -13,7 +12,6 @@ public class SplayTree {
 
      Node pass = null;
 
-     //Get the user to input th eamount of nodes
      System.out.println("Enter the amount of nodes: ");
      nodes = input.nextInt();
 
@@ -26,56 +24,49 @@ public class SplayTree {
     }
 
      //Create a while loop and display the choices 
-    while(choice != 5){
-     System.out.println("1.Insertion");
-     System.out.println("2.Search");
-     System.out.println("3.Deletion");
-     System.out.println("4.Display ");
-     System.out.println("press 5 to quit");
-     System.out.println("Choose an operation");
-     choice = input.nextInt();
-
-     //If 1 is chosen insert user inout for integer and pass it on to insert func
-     if (choice == 1){
-        System.out.println("Enter the integer: ");
-        num = input.nextInt();
+     while(choice != 5){
+        System.out.println("1.Insertion");
+        System.out.println("2.Search");
+        System.out.println("3.Deletion");
+        System.out.println("4.Display ");
+        System.out.println("press 5 to quit");
+        System.out.println("Choose an operation");
+        choice = input.nextInt();
+         
+        if (choice == 1){
+          System.out.println("Enter the integer: ");
+          num = input.nextInt();
         
-        pass = splayTree.insert(pass, num);
-     }
+          pass = splayTree.insert(pass, num);
+       }
 
-     //if 2 is chosen insert user input for integer and pass it on to search func
-     if (choice == 2){
+        if (choice == 2){
 
-        System.out.println("Enter the integer: ");
-        num = input.nextInt();
+          System.out.println("Enter the integer: ");
+          num = input.nextInt();
 
-        pass = splayTree.search(pass,num);
-     }
+          pass = splayTree.search(pass,num);
+       }
+         
+        if (choice == 3){
 
-     //if 3 is chosen get integer and input and pass it on to delete func
-     if (choice == 3){
+          System.out.println("Enter the integer: ");
+          num = input.nextInt();
 
-        System.out.println("Enter the integer: ");
-        num = input.nextInt();
+          pass = splayTree.delete(pass, num);
 
-        pass = splayTree.delete(pass, num);
+       }
 
-     }
+       if(choice == 4) {
 
-     //if 4 is chosen display the preorder traversal
-     if(choice == 4) {
+          splayTree.display(pass, true, false);
+          System.out.println("");
 
-        splayTree.display(pass, true, false);
-        System.out.println("");
+       }
 
-     }
-     
-     //if 5 is chosen end prog
-     if (choice == 5){
-
-        return;
-        
-     }
+       if (choice == 5){
+          return; 
+       }
     }
 
     
